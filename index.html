@@ -23,7 +23,7 @@
             let title = document.getElementById("title").value;
             let noteBody = document.getElementById("noteBody").value;
             const sendData = { message: { board, title, noteBody }};
-            window.wekit.messageHandlers.callbackHandler.postMessage(sendData);
+            window.webkit.messageHandlers.callbackHandler.postMessage(sendData);
         } catch (err) {
             alert(err);
         }
