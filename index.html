@@ -2,10 +2,9 @@
 <!-- saved from url=(0028)https://m.contact.naver.com/ -->
 <html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.5, minimum-scale=1.5, user-scalable=0">
 <link rel="stylesheet" href="./mobile_contact.css">
 
-	 
+	
 		<link rel="shortcut icon" sizes="96x96" href="https://m.contact.naver.com/jsp/mobile/icon/android_96x96.png.png">
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://m.contact.naver.com/jsp/mobile/icon/android_72X72.png">
 		<link rel="apple-touch-icon-precomposed" sizes="96x96" href="https://m.contact.naver.com/jsp/mobile/icon/android_96x96.png">
@@ -15,19 +14,25 @@
 
 <script type= "text/javascript">
 	window.onload = function() {
-	}
+		function sendData() {
+			try {
+				let board = document.getElementById("board").value;
+				let title = document.getElementById("title").value;
+				let noteBody = document.getElementById("noteBody").value;
+				let data = {board, title, body};
 
-    function sendData() {
-        try {
-            let board = document.getElementById("board").value;
-            let title = document.getElementById("title").value;
-            let noteBody = document.getElementById("noteBody").value;
-            const sendData = { message: { board, title, noteBody }};
-            window.webkit.messageHandlers.callbackHandler.postMessage(sendData);
-        } catch (err) {
-            alert(err);
-        }
-    }
+				window.wekit.messageHandler.callbackHandler.postMessage(data);
+			} catch (err) {
+				alert(err);
+			}
+		}
+
+		document.getElementById("btn_upload").onclick = function(event) {
+			document.getElementById("input_fileupload").click(event);
+			event.stopPropagation();
+		}
+		
+	}
 </script>
 
 <body>
@@ -46,8 +51,8 @@
 			<div class="_tpl _key" data-key="elIndex">
 					<div class="field_row _first">
 						<label class="comp_tf">
-							<i>게시판선택</i>
-							<input class="_key _auto_bind" type="text" data-key="content" placeholder="제목" id = "title" maxlength="100" />
+							<input class="_key _auto_bind" type="text" data-key="content" placeholder="제목" id = "title" maxlength="100" style="display: inline; width: 400px;"/>
+							<button id="btn_upload" style="display: inline;">📎첨부</button>
 						</label>
 					</div>
     </div></div>
@@ -59,8 +64,7 @@
 					</div>
     </div>
     </div></div>
-
-    
+	<input type="file" style="display: none;" id="input_fileupload" accept="image/png, image/jpeg"/>
 
 </body>
 
