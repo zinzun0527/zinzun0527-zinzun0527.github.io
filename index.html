@@ -2,10 +2,9 @@
 <!-- saved from url=(0028)https://m.contact.naver.com/ -->
 <html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.5, minimum-scale=1.5, user-scalable=0">
 <link rel="stylesheet" href="./mobile_contact.css">
 
-	
+	 
 		<link rel="shortcut icon" sizes="96x96" href="https://m.contact.naver.com/jsp/mobile/icon/android_96x96.png.png">
 		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://m.contact.naver.com/jsp/mobile/icon/android_72X72.png">
 		<link rel="apple-touch-icon-precomposed" sizes="96x96" href="https://m.contact.naver.com/jsp/mobile/icon/android_96x96.png">
@@ -13,30 +12,32 @@
 		<link rel="apple-touch-icon-precomposed" sizes="192x192" href="https://m.contact.naver.com/jsp/mobile/icon/android_192x192.png">
 </head>
 
-<script type="text/javascript">
+<script type= "text/javascript">
 	window.onload = function() {
-		function sendData() {
-			try {
-				let board = document.getElementById("board").value;
-				let title = document.getElementById("title").value;
-				let notebody = document.getElementById("notebody").value;
-				let data = {board, title, body};
+	}
 
-				window.webkit.messageHandlers.callbackHandler.postMessage(data);
-			} catch (err) {
-				alert(err);
-			}
-		}
-	};
+    function sendData() {
+        try {
+            let board = document.getElementById("board").value;
+            let title = document.getElementById("title").value;
+            let noteBody = document.getElementById("noteBody").value;
+            let data = {board, title, body};
+
+            window.wekit.messageHandler.callbackHandler.postMessage(data);
+        } catch (err) {
+            alert(err);
+        }
+    }
 </script>
 
 <body>
+<header class="sub_header">
     <div class="info_cover">
 			<div class="_tpl _key" data-key="elIndex">
 					<div class="field_row _first">
 						<label class="comp_tf">
 							<i>게시판 선택</i>
-							<input class="_key _auto_bind" type="text" data-key="content" placeholder="게시판 선택" maxlength="100" id="board">
+							<input class="_key _auto_bind" type="text" data-key="content" placeholder="게시판 선택" id = "board" maxlength="100" />
 						</label>
 					</div>
     </div></div>
@@ -45,8 +46,8 @@
 			<div class="_tpl _key" data-key="elIndex">
 					<div class="field_row _first">
 						<label class="comp_tf">
-							<i>제목</i>
-							<input class="_key _auto_bind" type="text" data-key="content" placeholder="제목" maxlength="100" id="title">
+							<i>게시판선택</i>
+							<input class="_key _auto_bind" type="text" data-key="content" placeholder="제목" id = "title" maxlength="100" />
 						</label>
 					</div>
     </div></div>
@@ -54,10 +55,12 @@
     <div class="info_cover">
 			<div class="_tpl _key" data-key="elIndex">
 					<div class="field_row _first">
-						<textarea class="_key _auto_bind" type="text" data-key="content" maxlength="500" id="notebody" style="width: 100%; height: 1000px; border: 0"></textarea>
+						<textarea class="_key _auto_bind" type="text" data-key="content" maxlength="100" id = "noteBody" style="width: 100%; height: 500px; border: 0"></textarea>
 					</div>
     </div>
     </div></div>
+
+    
 
 </body>
 
