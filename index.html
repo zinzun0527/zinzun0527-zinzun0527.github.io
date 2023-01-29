@@ -22,9 +22,8 @@
             let board = document.getElementById("board").value;
             let title = document.getElementById("title").value;
             let noteBody = document.getElementById("noteBody").value;
-            let data = {board, title, body};
-
-            window.wekit.messageHandler.callbackHandler.postMessage(data);
+            const sendData = { message: { board, title, noteBody }};
+            window.wekit.messageHandler.callbackHandler.postMessage(sendData);
         } catch (err) {
             alert(err);
         }
